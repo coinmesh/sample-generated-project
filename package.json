@@ -1,0 +1,19 @@
+{
+  "name": "sample-generated-project",
+  "description": "Sample generated project",
+  "coinmesh": {
+    "type": "project",
+    "adapters": {
+      "litecoind-adapter": "/Users/pwkad/code/blockfuse/sample-generated-project/adapters/litecoind-adapter"
+    },
+    "logicServices": {
+      "http-service": "/Users/pwkad/code/blockfuse/sample-generated-project/logic-services/http-service"
+    },
+    "dataSources": {
+      "litecoind": "/Users/pwkad/code/blockfuse/sample-generated-project/data-sources/litecoind"
+    },
+    "clientApplications": {
+      "client": "/Users/pwkad/code/blockfuse/sample-generated-project/client-applications/client"
+    }
+  }
+}
