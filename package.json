@@ -1,6 +1,14 @@
 {
   "name": "sample-generated-project",
   "description": "Sample generated project",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run client\" \"npm run logic-services\"",
+    "client": "cd ./client-applications/client && npm start",
+    "logic-services": "concurrently \"cd ./logic-services/http-service && npm start\" \"cd ./logic-services/http-service-two && npm start\""
+  },
   "coinmesh": {
     "type": "project",
     "adapters": {
@@ -15,5 +23,8 @@
     "clientApplications": {
       "client": "/Users/pwkad/code/blockfuse/sample-generated-project/client-applications/client"
     }
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
   }
 }
