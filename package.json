@@ -5,7 +5,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "concurrently \"npm run client\" \"npm run logic-services\"",
+    "start": "npm install && concurrently \"npm run client\" \"npm run logic-services\"",
     "client": "cd ./client-applications/client && npm start",
     "logic-services": "concurrently \"cd ./logic-services/http-service && npm start\" \"cd ./logic-services/http-service-two && npm start\""
   },
