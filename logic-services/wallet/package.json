@@ -1,21 +1,13 @@
 {
-  "name": "http-api-template",
+  "name": "@coinmesh/lnd-wallet",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
-    "start": "npm install && nodemon ./bin/www",
+    "start": "npm run ln-service",
+    "ln-service": " cd ./node_modules/ln-service && npm start",
     "test": "nodemon --exec 'jasmine'"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "cookie-parser": "~1.4.3",
-    "cors": "^2.8.4",
-    "debug": "~2.6.9",
-    "express": "~4.15.5",
-    "morgan": "~1.9.0",
-    "request": "^2.87.0",
-    "request-promise": "^4.2.2"
+    "ln-service": "^8.1.0"
   },
   "devDependencies": {
     "jasmine": "^3.1.0",
