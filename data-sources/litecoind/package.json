@@ -8,7 +8,7 @@
     "adapters": {
       "litecoind-adapter": "adapters/litecoind-adapter"
     },
-    "network": "regtest",
+    "network": "testnet",
     "runHttp": true,
     "conf": {
       "litecoin": {

@@ -10,14 +10,14 @@ export class HttpWrapper {
 
     this.http = new HttpClient()
       .configure(x => {
-        x.withBaseUrl(`http://localhost:3000/v0/`);
+        x.withBaseUrl(`http://localhost:10553/v0/`);
         x.withHeader('Authorization', `Basic ${token}`);
       });
   }
 
   get(path) {
     return this.http.get(path).then(result => {
-      return (typeof result.content === 'string') ? JSON.parse(result.content) : result.content;
+      return result.content;
     });
   }
   post(path, body) {

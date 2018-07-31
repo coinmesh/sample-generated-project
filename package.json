@@ -7,7 +7,8 @@
   "scripts": {
     "start": "npm install && concurrently \"npm run client\" \"npm run logic-services\"",
     "client": "cd ./client-applications/client && npm start",
-    "logic-services": "concurrently \"cd ./logic-services/http-service && npm start\" \"cd ./logic-services/http-service-two && npm start\""
+    "logic-services": "concurrently \"cd ./logic-services/wallet && npm start\" \"cd ./logic-services/http-service-two && npm start\"",
+    "test": "concurrently \"cd ./logic-services/wallet && npm test\" \"cd ./logic-services/http-service-two && npm test\""
   },
   "coinmesh": {
     "type": "project",
@@ -15,7 +16,7 @@
       "litecoind-adapter": "/Users/pwkad/code/blockfuse/sample-generated-project/adapters/litecoind-adapter"
     },
     "logicServices": {
-      "http-service": "/Users/pwkad/code/blockfuse/sample-generated-project/logic-services/http-service"
+      "wallet": "/Users/pwkad/code/blockfuse/sample-generated-project/logic-services/wallet"
     },
     "dataSources": {
       "litecoind": "/Users/pwkad/code/blockfuse/sample-generated-project/data-sources/litecoind"
