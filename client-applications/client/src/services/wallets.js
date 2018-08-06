@@ -1,8 +1,8 @@
-import {HttpWrapper} from './http-wrapper';
+import {WalletHttpWrapper} from './wallet-http-wrapper';
 import {WalletInfo} from 'models/wallet-info';
 
 export class WalletsService {
-  static inject = [HttpWrapper];
+  static inject = [WalletHttpWrapper];
   constructor(http) {
     this.http = http;
   }

@@ -1,12 +1,11 @@
 export class App {
   configureRouter(config, router) {
-    config.title = 'Litecoin Core Wallet';
+    config.title = 'Litecoin Wallet Components';
     config.map([
       { route: ['', 'home'], name: 'home', moduleId: 'routes/home/index', nav: true, title: 'Home' },
-      { route: 'pay', name: 'pay', moduleId: 'routes/pay/index', nav: true, title: 'Pay' },
-      { route: 'receive', name: 'receive', moduleId: 'routes/receive/index', nav: true, title: 'Receive' },
-      { route: 'peers', name: 'peers', moduleId: 'routes/peers/index', nav: true, title: 'Peers' },
-      { route: 'messages', name: 'messages', moduleId: 'routes/messages/index', nav: true, title: 'Messages' }
+      { route: 'send', name: 'send', moduleId: 'routes/pay', nav: true, title: 'Send' },
+      { route: 'receive', name: 'receive', moduleId: 'routes/receive', nav: true, title: 'Receive' },
+      { route: 'transactions', name: 'transactions', moduleId: 'routes/list', nav: true, title: 'Transactions' }
     ]);
 
     this.router = router;

@@ -2,8 +2,8 @@
   "name": "@coinmesh/lnd-wallet",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run litecoind-adapter",
-    "litecoind-adapter": "cd ./node_modules/@coinmesh/litecoind-adapter && npm start",
+    "start": "npm install && concurrently \"nodemon ./bin/www\" \"npm run litecoind-adapter\"",
+    "litecoind-adapter": "cd ./node_modules/@coinmesh/litecoind-adapter && nodemon --exec npm start",
     "test": "nodemon --exec 'jasmine'"
   },
   "dependencies": {
