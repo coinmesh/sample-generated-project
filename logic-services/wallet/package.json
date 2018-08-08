@@ -7,7 +7,7 @@
     "test": "nodemon --exec 'jasmine'"
   },
   "dependencies": {
-    "@coinmesh/litecoind-adapter": "0.0.3",
+    "@coinmesh/litecoind-adapter": "^0.0.4",
     "ln-service": "^8.1.0"
   },
   "devDependencies": {
