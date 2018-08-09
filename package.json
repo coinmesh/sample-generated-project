@@ -5,9 +5,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "npm install && concurrently \"npm run client\" \"npm run logic-services\"",
+    "start": "npm install && concurrently \"npm run client\" \"npm run logic-services\" \"npm run adapters\"",
     "client": "cd ./client-applications/client && npm start",
-    "logic-services": "concurrently \"cd ./logic-services/wallet && npm start\" \"cd ./logic-services/http-service-two && npm start\"",
+    "logic-services": "concurrently \"cd ./logic-services/wallet && npm start\"",
+    "adapters": "concurrently \"cd ./adapters/litecoind-adapter && npm start\"",
     "test": "concurrently \"cd ./logic-services/wallet && npm test\" \"cd ./logic-services/http-service-two && npm test\""
   },
   "coinmesh": {

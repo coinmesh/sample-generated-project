@@ -8,8 +8,8 @@ export class AddressesService {
   }
 
   createAddress() {
-    return this.http.post('/addresses', {}).then(result => {
-      return new Address(result.content);
+    return this.http.get('/addresses/getnewaddress', {}).then(result => {
+      return new Address({ address: result.result });
     });
   }
 }

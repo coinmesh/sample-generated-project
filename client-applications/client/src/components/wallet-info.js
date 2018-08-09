@@ -13,7 +13,7 @@ export class WalletInfo {
   }
 
   attached() {
-    this.getBalance();
+    // this.getBalance();
     return this.getWallets();
   }
 

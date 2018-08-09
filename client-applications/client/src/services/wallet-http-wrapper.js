@@ -11,7 +11,7 @@ export class WalletHttpWrapper {
 
     this.http = new HttpClient()
       .configure(x => {
-        x.withBaseUrl(`http://localhost:3301/v1/`);
+        x.withBaseUrl(`http://localhost:3304/v1/`);
         x.withHeader('Authorization', `Basic ${token}`);
       });
   }

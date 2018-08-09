@@ -9,8 +9,6 @@ export class WalletsService {
 
   getInfo() {
     return this.http.get('/wallet-info').then(result => {
-      console.log('-'.repeat(100))
-      console.log(result)
       return new WalletInfo(result);
     });
   }

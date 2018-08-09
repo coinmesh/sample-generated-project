@@ -2,39 +2,5 @@
   <require from="components/balance-info"></require>
   <require from="components/display-item"></require>
   <h2>My Wallet</h2>
-  <balance-info balance.bind="balance"></balance-info>
-
-  <display-item
-    label="balance"
-    value.bind="value.balance"></display-item>
-  <display-item
-    label="hdmasterkeyid"
-    value.bind="value.hdmasterkeyid"></display-item>
-  <display-item
-    label="immature_balance"
-    value.bind="value.immature_balance"></display-item>
-  <display-item
-    label="keypoololdest"
-    value.bind="value.keypoololdest"></display-item>
-  <display-item
-    label="keypoolsize"
-    value.bind="value.keypoolsize"></display-item>
-  <display-item
-    label="keypoolsize_hd_internal"
-    value.bind="value.keypoolsize_hd_internal"></display-item>
-  <display-item
-    label="paytxfee"
-    value.bind="value.paytxfee"></display-item>
-  <display-item
-    label="txcount"
-    value.bind="value.txcount"></display-item>
-  <display-item
-    label="unconfirmed_balance"
-    value.bind="value.unconfirmed_balance"></display-item>
-  <display-item
-    label="walletname"
-    value.bind="value.walletname"></display-item>
-  <display-item
-    label="walletversion"
-    value.bind="value.walletversion"></display-item>
+  <balance-info balance.bind="value"></balance-info>
 </template>

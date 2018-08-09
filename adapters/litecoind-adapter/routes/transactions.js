@@ -9,8 +9,8 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  let targetAddress = req.body.address;
-  let tokens = req.body.tokens;
+  let targetAddress = req.body.to_address;
+  let tokens = req.body.amount;
 
   transactionsService.sendToAddress(targetAddress, tokens).then(result => {
     res.json(result);
