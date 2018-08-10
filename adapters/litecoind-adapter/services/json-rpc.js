@@ -21,6 +21,8 @@ class JsonRpc {
 
     return rp(options).then(result => {
       return JSON.parse(result);
+    }).catch(error => {
+      return error;
     });
   }
 }
