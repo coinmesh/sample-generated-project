@@ -5,9 +5,9 @@ services:
     build: ./data-sources/litecoind
     volumes:
       - ./data-sources/litecoind/litecoin.conf:/home/litecoin/.litecoin/litecoin.conf
-    command: litecoind  --datadir=/home/litecoin/.litecoin --printtoconsole -rpcallowip=172.20.0.0/16
+    command: litecoind  --datadir=/home/litecoin/.litecoin --printtoconsole -rpcallowip=0.0.0.0/0
     ports:
-      - "19444:19444"
+      - "19332:19332"
   app:
     image: node:8
     working_dir: /home/node/app
@@ -22,3 +22,9 @@ services:
       - "3011:3011"
       - "3010:3010"
     command: "npm start"
+    environment: 
+      - RPC_PORT=19332
+      - RPC_HOST=litecoind
+      - RPC_USERNAME=rpcuser
+      - RPC_PASSWORD=rpcpassword
+
