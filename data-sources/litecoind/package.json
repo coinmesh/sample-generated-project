@@ -1,7 +1,7 @@
 {
   "name": "@coinmesh/litecoind",
   "version": "0.0.1",
-  "description": "testing litecoind",
+  "description": "Litecoind data source for CoinMesh.",
   "coinmesh": {
     "type": "data-source",
     "confFilePath": "litecoin.conf",
