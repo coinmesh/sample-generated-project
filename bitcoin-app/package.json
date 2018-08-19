@@ -1,0 +1,32 @@
+{
+  "name": "sample-generated-project",
+  "description": "Sample generated project",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "npm install && concurrently \"npm run client\" \"npm run logic-services\" \"npm run adapters\"",
+    "client": "cd ./client-applications/client && npm start",
+    "logic-services": "concurrently \"cd ./logic-services/wallet && npm start\"",
+    "adapters": "concurrently \"cd ./adapters/bitcoind-adapter && npm start\"",
+    "test": "concurrently \"cd ./logic-services/wallet && npm test\" \"cd ./logic-services/http-service-two && npm test\""
+  },
+  "coinmesh": {
+    "type": "project",
+    "adapters": {
+      "bitcoind-adapter": "/Users/pwkad/code/blockfuse/sample-generated-project/adapters/bitcoind-adapter"
+    },
+    "logicServices": {
+      "wallet": "/Users/pwkad/code/blockfuse/sample-generated-project/logic-services/wallet"
+    },
+    "dataSources": {
+      "bitcoind": "/Users/pwkad/code/blockfuse/sample-generated-project/data-sources/bitcoind"
+    },
+    "clientApplications": {
+      "client": "/Users/pwkad/code/blockfuse/sample-generated-project/client-applications/client"
+    }
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  }
+}
