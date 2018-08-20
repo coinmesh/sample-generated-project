@@ -14,16 +14,16 @@
   "coinmesh": {
     "type": "project",
     "adapters": {
-      "litecoind-adapter": "/Users/pwkad/code/blockfuse/sample-generated-project/adapters/litecoind-adapter"
+      "litecoind-adapter": "./adapters/litecoind-adapter"
     },
     "logicServices": {
-      "wallet": "/Users/pwkad/code/blockfuse/sample-generated-project/logic-services/wallet"
+      "wallet": "./logic-services/wallet"
     },
     "dataSources": {
-      "litecoind": "/Users/pwkad/code/blockfuse/sample-generated-project/data-sources/litecoind"
+      "litecoind": "./data-sources/litecoind"
     },
     "clientApplications": {
-      "client": "/Users/pwkad/code/blockfuse/sample-generated-project/client-applications/client"
+      "client": "./client-applications/client"
     }
   },
   "dependencies": {
