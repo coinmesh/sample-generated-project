@@ -7,10 +7,12 @@ describe('ExchangeRatesService', () => {
     exchangeRatesService = new ExchangeRatesService();
   });
 
-  describe('readFile()', () => {
-    it('reads and returns a file', (done) => {
-      exchangeRatesService.getExchangeRate('ltcusd').then(result => {
-        expect(result.data).not.toBe(undefined);
+  describe('getExchangeRate()', () => {
+    it('gets the current exchange rate', (done) => {
+      const currencyPair = 'ltcusd';
+
+      exchangeRatesService.getExchangeRate(currencyPair).then(result => {
+        expect(result.data.last > 0).toBe(true);
         done();
       });
     });

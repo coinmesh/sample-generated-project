@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const addressesService = require('../services/addresses');
+const addressesService = require('../index').addressesService;
 
-router.post('/listreceivedbyaddress', (req, res, next) => {
+router.post('/listaddresses', (req, res, next) => {
   const minConfirmations = req.body.minConfirmations;
   const includeEmpty = req.body.includeEmpty;
   const includeWatchOnly = req.body.includeWatchOnly;
@@ -16,7 +16,7 @@ router.post('/listreceivedbyaddress', (req, res, next) => {
   });
 });
 
-router.get('/getnewaddress/:account_name?', (req, res, next) => {
+router.get('/getnewaddress/?:account_name', (req, res, next) => {
   const accountName = req.params.account_name;
 
   addressesService.getNewAddress(accountName).then(result => {

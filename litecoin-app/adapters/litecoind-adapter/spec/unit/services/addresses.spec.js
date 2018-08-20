@@ -1,46 +1,46 @@
-const AddressesService = require('../../../services/address');
-const fileSystemService = require('@coinmesh/file-system-adapter').fileSystemService;
+const AddressesService = require('../../../services/addresses');
+const BlocksService = require('../../../services/blocks');
 
 describe('AddressesService', () => {
-  let addressService;
+  let addressesService;
+  let blocksService;
 
   beforeEach(() => {
-    addressService = new AddressesService();
+    addressesService = new AddressesService();
+    blocksService = new BlocksService();
   });
 
-  describe('createDirectory()', () => {
-    it('calls the fileSystemService to create a new address', (done) => {
-      spyOn(fileSystemService, 'createDirectory').and.returnValue(Promise.resolve());
-
-      addressService.createDirectory('/testing/path').then(result => {
-        expect(fileSystemService.createDirectory).toHaveBeenCalled();
+  describe('listReceivedByAddress()', () => {
+    it('gets the receive addresses from the node', (done) => {
+      addressesService.listReceivedByAddress().then(result => {
+        expect(result.result[0].address).not.toBe(null);
         done();
       });
     });
   });
 
-  describe('getDirectoryContents()', () => {
-    it('returns an object which resembles a file or address', (done) => {
-      const testDirPath = 'spec/tmp/test-dir';
-      const testFileName = 'test.txt';
-      const testDirName = 'test';
-
-      fileSystemService.createDirectory(testDirPath);
-      fileSystemService.createEmptyFile(`${testDirPath}/${testFileName}`);
-      fileSystemService.createDirectory(`${testDirPath}/${testDirName}`);
-
-      addressService.getDirectoryContents(testDirPath).then(result => {
-        expect(result);
+  describe('getNewAddress()', () => {
+    it('gets a new address', (done) => {
+      addressesService.getNewAddress().then(result => {
+        expect(result.result).not.toBe(null);
         done();
       });
     });
   });
 
-  describe('checkFileExists()', () => {
-    it('calls through to the file system service', () => {
-      spyOn(fileSystemService, 'checkFileExists');
-      addressService.checkFileExists('/test/');
-      expect(fileSystemService.checkFileExists).toHaveBeenCalled();
+  describe('sendToAddress()', () => {
+    beforeEach(() => {
+      return blocksService.generate(100);
+    });
+
+    it('sends coins to the address', (done) => {
+      const address = 'mx9et8rjan8kuoA6KH5setVK962VmGJuiZ';
+      const amount = 0.1;
+
+      addressesService.sendToAddress(address, amount).then(result => {
+        expect(result.result).not.toBe(null);
+        done();
+      });
     });
   });
 });
