@@ -14,16 +14,16 @@
   "coinmesh": {
     "type": "project",
     "adapters": {
-      "bitcoind-adapter": "/Users/pwkad/code/blockfuse/sample-generated-project/adapters/bitcoind-adapter"
+      "bitcoind-adapter": "./adapters/bitcoind-adapter"
     },
     "logicServices": {
-      "wallet": "/Users/pwkad/code/blockfuse/sample-generated-project/logic-services/wallet"
+      "wallet": "./logic-services/wallet"
     },
     "dataSources": {
-      "bitcoind": "/Users/pwkad/code/blockfuse/sample-generated-project/data-sources/bitcoind"
+      "bitcoind": "./data-sources/bitcoind"
     },
     "clientApplications": {
-      "client": "/Users/pwkad/code/blockfuse/sample-generated-project/client-applications/client"
+      "client": "./client-applications/client"
     }
   },
   "dependencies": {
