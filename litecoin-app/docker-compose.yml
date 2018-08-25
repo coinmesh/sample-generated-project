@@ -22,9 +22,8 @@ services:
       - "3011:3011"
       - "3010:3010"
     command: "npm start --unsafe-perm"
-    environment: 
+    environment:
       - RPC_PORT=19332
       - RPC_HOST=litecoind
       - RPC_USERNAME=rpcuser
       - RPC_PASSWORD=rpcpassword
-
