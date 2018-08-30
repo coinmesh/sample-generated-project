@@ -1,5 +1,5 @@
 export class Payment {
-  to_address = '';
+  address = '';
   label = '';
   amount = 0.0;
   type = 'payment';
