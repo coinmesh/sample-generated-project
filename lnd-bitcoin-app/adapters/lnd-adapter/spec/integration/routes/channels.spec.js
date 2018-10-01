@@ -30,10 +30,7 @@ describe('Channels', () => {
           .set('Authorization', 'Basic cnBjdXNlcjpycGNwYXNzd29yZA==')
           .expect(200)
           .end(function(err, res) {
-            console.log('-'.repeat(100))
-            console.log(err)
-            // console.log(res)
-            // expect(Array.isArray(res.body.channels)).toBe(true);
+            // TODO: Add a real assertion here
             if (err) throw err;
             done();
           });
@@ -41,19 +38,22 @@ describe('Channels', () => {
   });
 
   // TODO: Add a channel first
-  fdescribe('/v0/channels/', () => {
+  xdescribe('/v0/channels/', () => {
     it('opens a new channel', (done) => {
       const fakeId = '123';
       let url = `/v0/channels/`;
+      const body = {
+        partner_public_key: '123',
+        local_tokens: 100000
+      };
 
       request(app)
         .post(url)
+          .send(body)
           .set('Authorization', 'Basic cnBjdXNlcjpycGNwYXNzd29yZA==')
           .expect(200)
           .end(function(err, res) {
-            console.log('-'.repeat(100))
-            console.log(err)
-            // console.log(res)
+            // TODO: verify the response
             // expect(Array.isArray(res.body.channels)).toBe(true);
             if (err) throw err;
             done();
