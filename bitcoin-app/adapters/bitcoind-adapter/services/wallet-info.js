@@ -7,7 +7,6 @@ class WalletInfoService {
       params: [],
       id: 'getwalletinfo'
     };
-    console.log('going')
 
     return jsonRpcClient.post(request);
   }
