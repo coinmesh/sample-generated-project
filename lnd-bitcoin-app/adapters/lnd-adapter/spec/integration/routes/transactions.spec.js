@@ -2,7 +2,7 @@ const app = require('../../../app');
 const service = require('ln-service/service');
 const request = require('supertest');
 
-fdescribe('Transactions', () => {
+describe('Transactions', () => {
   describe('/v0/transactions/', () => {
     it('responds and returns relevant transactions', (done) => {
       let url = `/v0/transactions/`;
