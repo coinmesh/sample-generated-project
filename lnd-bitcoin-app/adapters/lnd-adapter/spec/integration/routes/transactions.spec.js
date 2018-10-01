@@ -18,6 +18,7 @@ fdescribe('Transactions', () => {
           });
     });
 
+    // TODO: 'output is dust' due to minrelaytxfee and low fees, need to figure this out
     xit('responds and sends coins to address', (done) => {
       let url = `/v0/transactions/`;
       const fakeAddress = 'mx9et8rjan8kuoA6KH5setVK962VmGJuiZ';
