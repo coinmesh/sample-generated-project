@@ -39,7 +39,7 @@ describe('Invoices', () => {
     });
 
     it('responds', (done) => {
-      let url = `/v0/invoices/${invoice.invoice}`;
+      let url = `/v0/invoices/${invoice.request}`;
 
       request(app)
         .get(url)

@@ -28,7 +28,7 @@
     "cookie-parser": "^1.4.3",
     "express-basic-auth": "^1.1.5",
     "jasmine": "^3.2.0",
-    "ln-service": "^15.3.0",
+    "ln-service": "^17.4.0",
     "nodemon": "^1.18.4",
     "supertest": "^3.1.0"
   }
