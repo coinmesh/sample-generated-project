@@ -194,3 +194,8 @@ card-item {
   display: block;
   max-width: 100%;
 }
+
+
+.balance-row {
+  margin-top: 15px;
+}

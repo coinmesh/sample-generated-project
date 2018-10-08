@@ -3,7 +3,6 @@ import Config from '../../config.json!';
 
 export class WalletHttpWrapper {
   http;
-  http;
 
   constructor() {
     let {username, password} = Config;

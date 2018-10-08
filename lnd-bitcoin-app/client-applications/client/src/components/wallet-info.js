@@ -13,8 +13,8 @@ export class WalletInfo {
   }
 
   attached() {
-    // this.getBalance();
-    return this.getWallets();
+    this.getBalance();
+    // return this.getWallets();
   }
 
   getBalance() {
@@ -22,9 +22,9 @@ export class WalletInfo {
       this.balance = result;
     });
   }
-  getWallets() {
-    this.walletsService.getInfo().then(result => {
-      this.value = result;
-    });
-  }
+  // getWallets() {
+  //   this.walletsService.getInfo().then(result => {
+  //     this.value = result;
+  //   });
+  // }
 }

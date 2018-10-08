@@ -11,7 +11,7 @@ export class HttpWrapper {
 
     this.http = new HttpClient()
       .configure(x => {
-        x.withBaseUrl(`http://localhost:3005/v0/`);
+        x.withBaseUrl(`http://localhost:3098/v0/`);
         x.withHeader('Authorization', `Basic ${token}`);
       });
   }
@@ -22,7 +22,9 @@ export class HttpWrapper {
     });
   }
   post(path, body) {
-    return this.http.post(path, body);
+    return this.http.post(path, body).then(result => {
+      return result.content;
+    });
   }
   patch(path, body) {
     return this.http.patch(path, body);
