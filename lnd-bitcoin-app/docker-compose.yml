@@ -7,7 +7,7 @@ services:
       - shared:/home/lnd/.lnd/
       - ./data-sources/lnd/lnd.conf:/home/lnd/.lnd/lnd.conf
       - ./data-sources/bitcoind/bitcoin.conf:/home/lnd/.bitcoin/bitcoin.conf
-    command: lnd  --datadir=/home/lnd/.lnd
+    command: lnd
     ports:
       - "9735:9735"
       - "10009:10009"
@@ -15,16 +15,17 @@ services:
     build: ./data-sources/bitcoind
     volumes:
       - ./data-sources/bitcoind/bitcoin.conf:/home/bitcoin/.bitcoin/bitcoin.conf
-    command: bitcoind  --datadir=/home/bitcoin/.bitcoin --printtoconsole -rpcallowip=0.0.0.0/0 -minrelaytxfee=0
+    command: bitcoind  --datadir=/home/bitcoin/.bitcoin --printtoconsole -rpcallowip=0.0.0.0/0
     ports:
       - "18332:18332"
       - "28332:28332"
+      - "28333:28333"
   app:
     image: node:8
     working_dir: /home/node/app
     volumes:
       - shared:/home/node/.lnd/
-      - /home/node/app/node_modules
+      - ./data-sources/lnd/lnd.conf:/home/node/.lnd/lnd.conf
       - ./:/home/node/app
     ports:
       - "9001:9000"
@@ -33,6 +34,8 @@ services:
       - "3302:3302"
       - "3011:3011"
       - "3010:3010"
+      - "3098:3098"
+      - "3099:3099"
     command: "npm start --unsafe-perm"
     environment:
       - RPC_PORT=18332
@@ -43,6 +46,9 @@ services:
       - LNSERVICE_LND_DIR=/home/node/.lnd
       - LNSERVICE_CHAIN=bitcoin
       - LNSERVICE_NETWORK=regtest
+      - LNSERVICE_SECRET_KEY=rpcpassword
+      - LND_HOST=lnd
+      - LND_GRPC_PORT=10009
 
 volumes:
   shared:

@@ -31,3 +31,4 @@ VOLUME ["/home/lnd/.lnd", "/home/lnd/.bitcoin"]
 USER "lnd"
 
 CMD ["lnd"]
+
